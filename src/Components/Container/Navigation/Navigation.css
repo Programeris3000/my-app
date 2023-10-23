@@ -1,0 +1,28 @@
+.navigation-element {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-list {
+  display: flex;
+  gap: 30px;
+}
+
+.navigation-list-item {
+}
+
+.navigation-link-item{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.active{
+  color: red;
+}
+
+nav .form-control {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-right: 30px;
+}

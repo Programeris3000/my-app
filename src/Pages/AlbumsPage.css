@@ -1,0 +1,19 @@
+.albums-list{
+  background-color: antiquewhite;
+  padding: 0;
+}
+.albums-list-li-item{
+  background-color: rgb(250, 198, 135);
+}
+.albums-list-link-item{
+  text-decoration: none;
+}
+.albums-list-title{
+  text-transform: uppercase;
+}
+
+.albums-list-creator{
+}
+
+.albums-list-length{
+}

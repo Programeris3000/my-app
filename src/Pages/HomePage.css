@@ -1,0 +1,37 @@
+.home-page{
+  background-color: antiquewhite;
+  text-align: center;
+}
+.users{
+  text-align: center;
+}
+.users-title{
+  text-align: center;
+}
+.home-page-link-element{
+  list-style: none;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.posts{
+  text-align: center;
+}
+.post-title{
+  text-align: center;
+}
+.posts-wrapper{
+  background-color: antiquewhite;
+}
+
+.albums{
+  text-align: center;
+}
+.album-title{
+  text-align: center;
+}
+.albums-wrapper{
+  background-color: antiquewhite;
+}
