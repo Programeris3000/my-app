@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Container from '../Components/Container/Container'
 import './HomePage.css'
+import { server } from '../Components/Config/Config'
 
 const HomePage = () => {
   const [users, setUsers] = useState([])
@@ -10,7 +11,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const usersFetch = async () => {
-      const rest = await fetch('https://jsonplaceholder.typicode.com/users')
+      const rest = await fetch(`${server}/users`)
       const data = await rest.json()
       setUsers(data)
     }
@@ -19,7 +20,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const postsFetch = async () => {
-      const rest = await fetch('https://jsonplaceholder.typicode.com/posts')
+      const rest = await fetch(`${server}/posts`)
       const data = await rest.json()
       setPosts(data)
     }
@@ -28,7 +29,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const albumsFetch = async () => {
-      const rest = await fetch('https://jsonplaceholder.typicode.com/albums')
+      const rest = await fetch(`${server}/albums`)
       const data = await rest.json()
       setAlbums(data)
     }

@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import Container from '../Container'
-import { NavLink } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Form, NavLink } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { useSubmit } from 'react-router-dom'
 import './Navigation.css'
 
 
 const Navigation = () => {
 
-  const [text, setText] = useState('')
+  // const [text, setText] = useState('')
 
 
-  const SearchFormHandler = (event) => {
-    event.preventDefault()
-    console.log(text)
-  }
-  const SearchBarHandler = (event) => setText(event.target.value)
+  // const SearchFormHandler = (event) => {
+  //   event.preventDefault()
+  //   console.log(text)
+  // }
+
+  // const SearchBarHandler = (event) => setText(event.target.value)
   
   return (
     <Container>
@@ -37,17 +39,22 @@ const Navigation = () => {
             <NavLink className="navigation-link-item" to='/albums'>Albums</NavLink>
           </li>
 
+        <li className="nav-item">
+            <NavLink className="navigation-link-item" to='/search'>Search</NavLink>
+          </li>
+
         </ul>
 
         <div className="form-control">
-          <form id="search-bar-form" onSubmit={SearchFormHandler}>
+          <form id="search-bar-form">
           <label id="search-bar-label"htmlFor="search-bar">Search by key: </label>
           <input 
           id="search-bar" 
           name="search-bar" 
           type="text" 
-          value={text} 
-          onChange={SearchBarHandler}/>
+          // value={text} 
+          // onChange={SearchBarHandler}
+          />
 
           <button type="submit">Search</button>
           </form>
@@ -58,3 +65,11 @@ const Navigation = () => {
 }
 
 export default Navigation
+
+// export const searchAction = async ( {request} )=>{
+//   const data = await request.formData()
+//   const submission = {
+//     text: data.get('search-bar')
+//   }
+//   console.log(submission)
+// }

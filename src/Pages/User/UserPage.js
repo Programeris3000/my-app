@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import Container from "../../Components/Container/Container"
 import "./UserPage.css"
+import { server } from "../../Components/Config/Config"
 
 const UserPage = () => {
   const { ID } = useParams()
@@ -12,7 +13,7 @@ const UserPage = () => {
 
   useEffect(() => {
     const userFetch = async () => {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/users/${ID}?_embed=posts&_embed=albums`)
+      const res = await fetch(`${server}/users/${ID}?_embed=posts&_embed=albums`)
       const person = await res.json()
       setUser(person)
     }
@@ -42,7 +43,7 @@ const UserPage = () => {
     albumsDisplayer = albums.map((album, index)=>{
       return (
         <li key={index}>
-          <Link to={`/albums/${album.id}`}>{album.title}</Link>
+          <Link to={`/albums/${album.id}`}>{ID}{album.title}</Link>
         </li>
       )
     })
@@ -79,16 +80,3 @@ const UserPage = () => {
 }
 
 export default UserPage
-
-// 5. Sukurti naują puslapį use, kuriame bus atvaizduojama vartotojo informacija:
-//   5.1. Pilnas vardas.
-//   5.2. Vartotojo vardas / nick'as.
-//   5.3. El. paštas.
-//   5.4. Adresas, kuris turės gatvę, namo numerį, miestą, pašto kodą. Paspaudus ant adreso, pagal koordinates, turėtų atidaryti šios vietos Google Maps.
-//   5.5. Telefono numeris.
-//   5.6. Internetinio puslapio adresas.
-//   5.7. Įmonės, kurioje dirba, pavadinimas.
-
-// 6. Šiame puslapyje (use) turi būti atvaizduojama:
-//   6.1. Visi vartotojo parašyti įrašai (posts). Kiekvienas post'as turi turėti nuorodą.
-//   6.2. Visi vartotojo sukurti foto albumai. Kiekvienas albumas turės pavadinimą, kuris turi būti nuoroda.

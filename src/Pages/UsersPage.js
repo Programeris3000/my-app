@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import "./UsersPage.css"
+import { server } from "../Components/Config/Config"
 
 
 const UsersPage = () => {
@@ -18,7 +19,7 @@ const UsersPage = () => {
 
   useEffect(()=>{
     const usersFetch = async ()=>{
-      const res = await fetch('https://jsonplaceholder.typicode.com/users?_embed=posts')
+      const res = await fetch(`${server}/users?_embed=posts`)
       const usersArray = await res.json()
       setUsers(usersArray)
     }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Container from "../../Components/Container/Container"
+import { server } from "../../Components/Config/Config"
 const UserPosts = () => {
 
 
@@ -10,7 +11,7 @@ const UserPosts = () => {
 
   useEffect(() => {
     const authorPostsFetch = async () => {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/users/${ID}/posts`)
+      const res = await fetch(`${server}/users/${ID}/posts`)
       const authorPosts = await res.json()
       setPosts(authorPosts)
     }
@@ -19,7 +20,7 @@ const UserPosts = () => {
 
   useEffect(() => {
     const authorFetch = async () => {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/users/${ID}`)
+      const res = await fetch(`${server}/users/${ID}`)
       const authorName = await res.json()
       setAuthor(authorName)
     }
@@ -32,10 +33,10 @@ const UserPosts = () => {
   if (posts && posts.length > 0) {
     authorPostsDisplay = ( posts.map((post,index)=>{
       return(
-        <ul>
-          <li key={index}>Post Title: {post.title}</li>
-          <li key={index}>Post Paragraph: {post.body}</li>
-        </ul>
+        <div key={index}>
+          <h2>Post Title: {post.title}</h2>
+          <p>Post Paragraph: {post.body}</p>
+        </div>
       )
     })
     )

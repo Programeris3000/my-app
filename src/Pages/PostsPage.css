@@ -11,8 +11,36 @@
   text-decoration: none;
   color: black;
 }
-.posts-list-title{
+.posts-list-title-link{
   display: block;
   text-decoration: none;
 
 }
+.post-list-title{
+ margin-bottom: 5px;
+ color: rgb(0, 0, 0);
+ display: inline;
+ font-size: 26px;
+ padding-right: 5px;
+}
+.post-comments{
+  display: inline;
+}
+.post-edit-button{
+  color: black;
+  text-decoration: none;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 3px;
+  margin-left: 10px;
+  background-color: rgb(247, 237, 237);
+}
+
+.post-edit-button:hover{
+  color: black;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+
